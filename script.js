@@ -34,15 +34,17 @@ class TopSpinUSA {
 
     // Generate 200+ tennis products
     generateProducts() {
-        const brands = ['Nike', 'Adidas', 'Wilson', 'Babolat', 'Head', 'Yonex', 'Lacoste', 'Fila', 'New Balance', 'Asics', 'On'];
+        const brands = ['Nike','Adidas','Wilson','Babolat','Head','Yonex','Lacoste','Fila','New Balance','Asics','On'];
+        // Define categories and allowed brands per category to avoid impossible combinations
+        // Only generate products for categories you sell: shoes, clothes (shirts/shorts/jackets), balls, rackets, bags
         const categories = {
             rackets: ['Pro Staff', 'Pure Drive', 'Aero', 'Blade', 'Clash', 'Speed', 'Gravity', 'Radical', 'Prestige', 'Extreme'],
-            shoes: ['Air Zoom', 'Court', 'Barricade', 'Defiant', 'Solution', 'Eclipsion', 'Gel Resolution', 'Court FF', 'Vapor', 'Zoom'],
-            shirts: ['Dri-FIT', 'Aeroready', 'Court', 'Essential', 'Classic', 'Performance', 'Comfort', 'Active', 'Sport', 'Pro'],
-            shorts: ['Court', 'Dri-FIT', 'Aeroready', 'Essential', 'Classic', 'Performance', 'Comfort', 'Active', 'Sport', 'Pro'],
-            dresses: ['Court', 'Dri-FIT', 'Aeroready', 'Essential', 'Classic', 'Performance', 'Comfort', 'Active', 'Sport', 'Pro'],
-            jackets: ['Windbreaker', 'Fleece', 'Puffer', 'Softshell', 'Rain', 'Thermal', 'Quilted', 'Bomber', 'Track', 'Hoodie'],
-            accessories: ['Cap', 'Visor', 'Headband', 'Wristband', 'Socks', 'Bag', 'Grip', 'String', 'Overgrip', 'Dampener']
+            shoes: ['Air Zoom', 'Court', 'Barricade', 'Defiant', 'Solution', 'Gel Resolution', 'Court FF', 'Vapor', 'Zoom'],
+            shirts: ['Dri-FIT', 'Aeroready', 'Court', 'Essential', 'Classic', 'Performance', 'Comfort', 'Active', 'Sport'],
+            shorts: ['Court', 'Dri-FIT', 'Aeroready', 'Essential', 'Classic', 'Performance', 'Comfort', 'Active'],
+            jackets: ['Windbreaker', 'Fleece', 'Puffer', 'Softshell', 'Rain', 'Thermal', 'Bomber', 'Track'],
+            balls: ['Pressurized Tennis Balls', 'Practice Ball Can', 'Pressureless Ball Set', 'Can of 3 Balls'],
+            bags: ['Racket Backpack', 'Tournament Bag', 'Duffel Bag', 'Racket Tote']
         };
 
         const colors = ['Black', 'White', 'Navy', 'Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Pink', 'Gray', 'Brown'];
@@ -50,9 +52,20 @@ class TopSpinUSA {
 
         let productId = 1;
         
+        // Brand-category mapping rules — ensure brands only produce sensible product types
+        const brandCategoryMap = {
+            apparelBrands: ['Nike','Adidas','Lacoste','Fila','New Balance','Asics','On'], // shoes & clothes & bags
+            racketBrands: ['Wilson','Babolat','Head','Yonex'] // rackets, balls, bags
+        };
+
         Object.keys(categories).forEach(category => {
             categories[category].forEach(productName => {
                 brands.forEach(brand => {
+                    // Skip combinations that don't make sense: apparel brands shouldn't generate rackets or balls; racket brands shouldn't generate apparel-only items
+                    const isApparel = ['shirts','shorts','jackets','shoes'].includes(category);
+                    const isRacketOrBallOrBag = ['rackets','balls','bags'].includes(category);
+                    if (brandCategoryMap.apparelBrands.includes(brand) && isRacketOrBallOrBag) return; // apparel brands don't make rackets/balls in our catalog
+                    if (brandCategoryMap.racketBrands.includes(brand) && isApparel) return; // racket brands won't produce apparel in this catalog
                     const basePrice = this.getBasePrice(category, brand);
                     const discount = Math.random() > 0.7 ? Math.floor(Math.random() * 30) + 10 : 0;
                     const currentPrice = Math.floor(basePrice * (1 - discount / 100));
@@ -90,11 +103,11 @@ class TopSpinUSA {
         const basePrices = {
             rackets: { 'Wilson': 200, 'Babolat': 180, 'Head': 190, 'Yonex': 170, 'default': 160 },
             shoes: { 'Nike': 120, 'Adidas': 110, 'Asics': 100, 'New Balance': 90, 'default': 80 },
-            shirts: { 'Lacoste': 60, 'Nike': 50, 'Adidas': 45, 'Wilson': 40, 'default': 35 },
-            shorts: { 'Lacoste': 50, 'Nike': 40, 'Adidas': 35, 'Wilson': 30, 'default': 25 },
-            dresses: { 'Lacoste': 80, 'Nike': 70, 'Adidas': 65, 'Wilson': 60, 'default': 55 },
-            jackets: { 'Nike': 100, 'Adidas': 90, 'Wilson': 80, 'Lacoste': 120, 'default': 70 },
-            accessories: { 'Wilson': 25, 'Babolat': 20, 'Head': 18, 'Yonex': 15, 'default': 12 }
+            shirts: { 'Lacoste': 60, 'Nike': 50, 'Adidas': 45, 'default': 35 },
+            shorts: { 'Lacoste': 50, 'Nike': 40, 'Adidas': 35, 'default': 25 },
+            jackets: { 'Nike': 100, 'Adidas': 90, 'Lacoste': 120, 'default': 70 },
+            balls: { 'Wilson': 12, 'Babolat': 10, 'Head': 10, 'Yonex': 10, 'default': 9 },
+            bags: { 'Wilson': 80, 'Babolat': 70, 'Head': 75, 'default': 60 }
         };
         
         return basePrices[category][brand] || basePrices[category]['default'] || 50;
@@ -112,9 +125,9 @@ class TopSpinUSA {
             shoes: ['Breathable mesh', 'Cushioned sole', 'Non-marking outsole', 'Lightweight design'],
             shirts: ['Moisture-wicking', 'UV protection', 'Quick-dry fabric', 'Comfortable fit'],
             shorts: ['Elastic waistband', 'Moisture-wicking', 'Multiple pockets', 'Comfortable fit'],
-            dresses: ['Moisture-wicking', 'UV protection', 'Quick-dry fabric', 'Elegant design'],
             jackets: ['Water-resistant', 'Breathable', 'Lightweight', 'Packable'],
-            accessories: ['High-quality materials', 'Durable construction', 'Comfortable fit', 'Professional grade']
+            balls: ['Pressurized', 'Consistent bounce', 'Tournament quality', 'Durable'],
+            bags: ['Multiple compartments', 'Padded racquet section', 'Comfortable straps', 'Durable material']
         };
         
         return features[category] || ['High-quality', 'Durable', 'Comfortable', 'Professional'];
@@ -175,6 +188,9 @@ class TopSpinUSA {
             const value = parseInt(e.target.value);
             maxPrice.textContent = `$${value}`;
             this.currentFilters.priceRange[1] = value;
+            // sync numeric max input if present
+            const maxPriceInputEl = document.getElementById('maxPriceInput');
+            if (maxPriceInputEl) maxPriceInputEl.value = value;
             this.applyFilters();
         });
 
@@ -188,16 +204,25 @@ class TopSpinUSA {
         // Price inputs
         const minPriceInput = document.getElementById('minPriceInput');
         const maxPriceInput = document.getElementById('maxPriceInput');
-        
-        minPriceInput.addEventListener('change', (e) => {
-            this.currentFilters.priceRange[0] = parseInt(e.target.value) || 0;
-            this.applyFilters();
-        });
-        
-        maxPriceInput.addEventListener('change', (e) => {
-            this.currentFilters.priceRange[1] = parseInt(e.target.value) || 500;
-            this.applyFilters();
-        });
+
+        if (minPriceInput) {
+            minPriceInput.addEventListener('change', (e) => {
+                this.currentFilters.priceRange[0] = parseInt(e.target.value) || 0;
+                this.applyFilters();
+            });
+        }
+
+        if (maxPriceInput) {
+            maxPriceInput.addEventListener('change', (e) => {
+                this.currentFilters.priceRange[1] = parseInt(e.target.value) || parseInt(document.getElementById('priceRange')?.max || 500);
+                // keep the range input in sync
+                const range = document.getElementById('priceRange');
+                if (range) range.value = this.currentFilters.priceRange[1];
+                const maxLabel = document.getElementById('maxPrice');
+                if (maxLabel) maxLabel.textContent = `$${this.currentFilters.priceRange[1]}`;
+                this.applyFilters();
+            });
+        }
 
         // Clear filters
         const clearFiltersBtn = document.getElementById('clearFiltersBtn');
@@ -964,7 +989,7 @@ class TopSpinUSA {
         // Google OAuth setup
         if (typeof google !== 'undefined') {
             google.accounts.id.initialize({
-                client_id: '6530', // Replace with actual client ID
+                client_id: 'YOUR_GOOGLE_CLIENT_ID', // Replace with actual client ID
                 callback: this.handleGoogleAuth.bind(this)
             });
         }

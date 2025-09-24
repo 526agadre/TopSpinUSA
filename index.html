@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Promo Bar -->
+    <div class="promo-bar" role="region" aria-label="Promotions">
+        <div class="container promo-content">
+            <span class="promo-message"><strong>Free 2-day shipping</strong> on orders over $75</span>
+            <a href="#sale" class="promo-cta">Shop Sale <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
     <!-- Header Section -->
     <header class="main-header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -89,27 +96,23 @@
                         <div class="category-section">
                             <h3 class="category-title">Equipment</h3>
                             <ul class="category-list" role="list">
-                                <li><a href="#rackets" class="category-link" data-category="rackets">Tennis Rackets</a></li>
-                                <li><a href="#strings" class="category-link" data-category="strings">Strings & Grips</a></li>
-                                <li><a href="#balls" class="category-link" data-category="balls">Tennis Balls</a></li>
-                                <li><a href="#bags" class="category-link" data-category="bags">Racket Bags</a></li>
+                                <li><a href="products.html?category=rackets" class="category-link" data-category="rackets">Tennis Rackets</a></li>
+                                <li><a href="products.html?category=balls" class="category-link" data-category="balls">Tennis Balls</a></li>
+                                <li><a href="products.html?category=bags" class="category-link" data-category="bags">Racket Bags</a></li>
                             </ul>
                         </div>
                         <div class="category-section">
                             <h3 class="category-title">Footwear</h3>
                             <ul class="category-list" role="list">
-                                <li><a href="#shoes" class="category-link" data-category="shoes">Tennis Shoes</a></li>
-                                <li><a href="#socks" class="category-link" data-category="socks">Tennis Socks</a></li>
+                                <li><a href="products.html?category=shoes" class="category-link" data-category="shoes">Tennis Shoes</a></li>
                             </ul>
                         </div>
                         <div class="category-section">
                             <h3 class="category-title">Apparel</h3>
                             <ul class="category-list" role="list">
-                                <li><a href="#shirts" class="category-link" data-category="shirts">Tennis Shirts</a></li>
-                                <li><a href="#shorts" class="category-link" data-category="shorts">Tennis Shorts</a></li>
-                                <li><a href="#dresses" class="category-link" data-category="dresses">Tennis Dresses</a></li>
-                                <li><a href="#jackets" class="category-link" data-category="jackets">Jackets & Sweaters</a></li>
-                                <li><a href="#accessories" class="category-link" data-category="accessories">Accessories</a></li>
+                                <li><a href="products.html?category=shirts" class="category-link" data-category="shirts">Tennis Shirts</a></li>
+                                <li><a href="products.html?category=shorts" class="category-link" data-category="shorts">Tennis Shorts</a></li>
+                                <li><a href="products.html?category=jackets" class="category-link" data-category="jackets">Jackets & Sweaters</a></li>
                             </ul>
                         </div>
                     </div>
@@ -144,19 +147,166 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home" role="banner">
+    <section class="hero-section full-bleed" id="home" role="banner">
+        <div class="hero-bg" aria-hidden="true">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop">
+                <source src="https://cdn.coverr.co/videos/coverr-tennis-court-1137/1080p.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-announcement">
+                    <span class="announcement-pill"><i class="fas fa-bolt" aria-hidden="true"></i> Fall Gear Drop: Up to 40% off select items</span>
+                </div>
                 <h1 class="hero-title">Elevate Your Tennis Game</h1>
                 <p class="hero-subtitle">Discover premium tennis equipment and apparel from the world's leading brands</p>
                 <div class="hero-actions">
                     <button class="cta-btn primary" id="shopNowBtn">Shop Now</button>
                     <button class="cta-btn secondary" id="learnMoreBtn">Learn More</button>
                 </div>
+                <ul class="hero-features" role="list">
+                    <li class="hero-feature"><i class="fas fa-truck-fast" aria-hidden="true"></i> Free 2-day shipping over $75</li>
+                    <li class="hero-feature"><i class="fas fa-rotate" aria-hidden="true"></i> 30-day easy returns</li>
+                    <li class="hero-feature"><i class="fas fa-shield-check" aria-hidden="true"></i> Authorized retailer warranty</li>
+                </ul>
+                <div class="hero-stats" aria-label="TopSpinUSA highlights">
+                    <div class="stat">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">5-star reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2k+</div>
+                        <div class="stat-label">Products in-stock</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
             </div>
             <div class="hero-visual">
                 <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="Tennis player in action" class="hero-gif" loading="lazy">
+                <div class="hero-offer-card" aria-label="Limited time offer">
+                    <div class="offer-badge">Limited</div>
+                    <p class="offer-title">Stringing Service</p>
+                    <p class="offer-subtitle">Free with select rackets</p>
+                </div>
             </div>
+        </div>
+        <div class="hero-trust" aria-label="Trusted brands">
+            <span class="trust-text">Trusted by athletes using</span>
+            <div class="trust-logos" aria-hidden="true">
+                <i class="fab fa-nike"></i>
+                <i class="fab fa-adidas"></i>
+                <i class="fas fa-table-tennis-paddle-ball"></i>
+                <i class="fas fa-bolt"></i>
+            </div>
+        </div>
+        <a href="#featured-heading" class="scroll-indicator" aria-label="Scroll to featured products">
+            <span class="mouse"></span>
+            <span class="scroll-text">Scroll</span>
+        </a>
+    </section>
+
+    <!-- Campaign Section -->
+    <section class="campaign-section" role="region" aria-label="Campaign highlights">
+        <div class="container">
+            <div class="campaign-grid">
+                <a class="campaign-tile large" href="products.html?category=shoes" aria-label="Shop performance shoes">
+                    <div class="tile-media" style="background-image:url('https://images.unsplash.com/photo-1582582621959-48b09c554f79?q=80&w=1600&auto=format&fit=crop');"></div>
+                    <div class="tile-overlay"></div>
+                    <div class="tile-content">
+                        <h3 class="tile-title">Speed Meets Control</h3>
+                        <p class="tile-subtitle">Performance shoes for hard courts</p>
+                        <span class="tile-cta">Shop Now</span>
+                    </div>
+                </a>
+                <a class="campaign-tile" href="products.html?category=rackets" aria-label="Shop rackets">
+                    <div class="tile-media" style="background-image:url('https://images.unsplash.com/photo-1547347559-3ec9cdbd3f3a?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="tile-overlay"></div>
+                    <div class="tile-content">
+                        <h3 class="tile-title">Pro Rackets</h3>
+                        <span class="tile-cta">Explore</span>
+                    </div>
+                </a>
+                <a class="campaign-tile" href="products.html?category=apparel" aria-label="Shop apparel">
+                    <div class="tile-media" style="background-image:url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="tile-overlay"></div>
+                    <div class="tile-content">
+                        <h3 class="tile-title">Court Apparel</h3>
+                        <span class="tile-cta">Discover</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Carousel -->
+    <section class="new-arrivals-section" role="region" aria-labelledby="new-arrivals-heading">
+        <div class="container">
+            <header class="section-header row">
+                <h2 id="new-arrivals-heading" class="section-title">New Arrivals</h2>
+                <a href="products.html?sort=newest" class="section-link">View All</a>
+            </header>
+            <div class="carousel" aria-label="New arrivals carousel">
+                <div class="carousel-track">
+                    <article class="product-card">
+                        <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop" alt="Adidas Barricade"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Adidas</div>
+                            <h3 class="product-name">Barricade</h3>
+                            <div class="product-price"><span class="current-price">$149</span></div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?q=80&w=600&auto=format&fit=crop" alt="Yonex Ezone 98"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Yonex</div>
+                            <h3 class="product-name">Ezone 98</h3>
+                            <div class="product-price"><span class="current-price">$259</span></div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1581012778430-3f22b4f5baf4?q=80&w=600&auto=format&fit=crop" alt="NikeCourt Advantage Tee"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Nike</div>
+                            <h3 class="product-name">Court Advantage Tee</h3>
+                            <div class="product-price"><span class="current-price">$45</span></div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=600&auto=format&fit=crop" alt="Babolat RPM Blast"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Babolat</div>
+                            <h3 class="product-name">RPM Blast 17</h3>
+                            <div class="product-price"><span class="current-price">$18</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Marquee -->
+    <section class="brand-marquee" aria-label="Brand partners">
+        <div class="marquee-track">
+            <span class="brand">NIKE</span>
+            <span class="brand">ADIDAS</span>
+            <span class="brand">WILSON</span>
+            <span class="brand">BABOLAT</span>
+            <span class="brand">HEAD</span>
+            <span class="brand">YONEX</span>
+            <span class="brand">LACOSTE</span>
+            <span class="brand">ASICS</span>
+            <span class="brand">NIKE</span>
+            <span class="brand">ADIDAS</span>
+            <span class="brand">WILSON</span>
+            <span class="brand">BABOLAT</span>
+            <span class="brand">HEAD</span>
+            <span class="brand">YONEX</span>
+            <span class="brand">LACOSTE</span>
+            <span class="brand">ASICS</span>
         </div>
     </section>
 
@@ -233,6 +383,16 @@
                                     <span class="filter-label">Jackets</span>
                                     <span class="filter-count">(35)</span>
                                 </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="balls" class="filter-checkbox">
+                                    <span class="filter-label">Balls</span>
+                                    <span class="filter-count">(40)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="bags" class="filter-checkbox">
+                                    <span class="filter-label">Bags</span>
+                                    <span class="filter-count">(22)</span>
+                                </label>
                             </div>
                         </div>
                         
@@ -258,6 +418,36 @@
                                     <input type="checkbox" value="babolat" class="filter-checkbox">
                                     <span class="filter-label">Babolat</span>
                                     <span class="filter-count">(28)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="head" class="filter-checkbox">
+                                    <span class="filter-label">Head</span>
+                                    <span class="filter-count">(22)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="yonex" class="filter-checkbox">
+                                    <span class="filter-label">Yonex</span>
+                                    <span class="filter-count">(18)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="lacoste" class="filter-checkbox">
+                                    <span class="filter-label">Lacoste</span>
+                                    <span class="filter-count">(12)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="new-balance" class="filter-checkbox">
+                                    <span class="filter-label">New Balance</span>
+                                    <span class="filter-count">(10)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="asics" class="filter-checkbox">
+                                    <span class="filter-label">ASICS</span>
+                                    <span class="filter-count">(8)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="on" class="filter-checkbox">
+                                    <span class="filter-label">On</span>
+                                    <span class="filter-count">(6)</span>
                                 </label>
                             </div>
                         </div>
@@ -333,7 +523,8 @@
                         <li><a href="#rackets" class="footer-link">Tennis Rackets</a></li>
                         <li><a href="#shoes" class="footer-link">Tennis Shoes</a></li>
                         <li><a href="#apparel" class="footer-link">Tennis Apparel</a></li>
-                        <li><a href="#accessories" class="footer-link">Accessories</a></li>
+                        <li><a href="#balls" class="footer-link">Tennis Balls</a></li>
+                        <li><a href="#bags" class="footer-link">Bags</a></li>
                         <li><a href="#sale" class="footer-link">Sale</a></li>
                     </ul>
                 </div>
