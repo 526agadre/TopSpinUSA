@@ -20,36 +20,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Promo Bar -->
-    <div class="promo-bar" role="region" aria-label="Promotions">
-        <div class="container promo-content">
-            <span class="promo-message"><strong>Free 2-day shipping</strong> on orders over $75</span>
-            <a href="#sale" class="promo-cta">Shop Sale <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-    </div>
     <!-- Header Section -->
     <header class="main-header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo-section">
                     <a href="#home" class="logo-link" aria-label="TopSpinUSA Home">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='60'>🎾</text></svg>" alt="TopSpinUSA Logo" class="logo-img">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='60'></text></svg>" alt="TopSpinUSA Logo" class="logo-img">
                         <span class="logo-text">TopSpinUSA</span>
                     </a>
                 </div>
-                
-                <div class="search-section">
-                    <form class="search-form" role="search" aria-label="Product search">
-                        <div class="search-input-group">
-                            <input type="search" id="searchInput" class="search-input" placeholder="Search tennis equipment..." aria-label="Search products">
-                            <button type="submit" class="search-btn" aria-label="Search">
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions"></div>
-                    </form>
-                </div>
-
                 <div class="nav-actions">
                     <button class="favorites-btn" id="favoritesBtn" aria-label="View favorites">
                         <i class="fas fa-heart" aria-hidden="true"></i>
@@ -149,15 +129,16 @@
     <!-- Hero Section -->
     <section class="hero-section full-bleed" id="home" role="banner">
         <div class="hero-bg" aria-hidden="true">
-            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop">
+            <!-- Background video (kept as fallback) -->
                 <source src="https://cdn.coverr.co/videos/coverr-tennis-court-1137/1080p.mp4" type="video/mp4">
             </video>
+            <!-- Tennis background GIF (lazy) -->
+            <img class="hero-gif-bg" src="imgs/novak1.gif" alt="Tennis background" loading="lazy">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-announcement">
-                    <span class="announcement-pill"><i class="fas fa-bolt" aria-hidden="true"></i> Fall Gear Drop: Up to 40% off select items</span>
                 </div>
                 <h1 class="hero-title">Elevate Your Tennis Game</h1>
                 <p class="hero-subtitle">Discover premium tennis equipment and apparel from the world's leading brands</p>
@@ -185,28 +166,6 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="Tennis player in action" class="hero-gif" loading="lazy">
-                <div class="hero-offer-card" aria-label="Limited time offer">
-                    <div class="offer-badge">Limited</div>
-                    <p class="offer-title">Stringing Service</p>
-                    <p class="offer-subtitle">Free with select rackets</p>
-                </div>
-            </div>
-        </div>
-        <div class="hero-trust" aria-label="Trusted brands">
-            <span class="trust-text">Trusted by athletes using</span>
-            <div class="trust-logos" aria-hidden="true">
-                <i class="fab fa-nike"></i>
-                <i class="fab fa-adidas"></i>
-                <i class="fas fa-table-tennis-paddle-ball"></i>
-                <i class="fas fa-bolt"></i>
-            </div>
-        </div>
-        <a href="#featured-heading" class="scroll-indicator" aria-label="Scroll to featured products">
-            <span class="mouse"></span>
-            <span class="scroll-text">Scroll</span>
-        </a>
     </section>
 
     <!-- Campaign Section -->
@@ -554,10 +513,8 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">&copy; 2024 TopSpinUSA. All rights reserved.</p>
                     <div class="payment-methods">
                         <i class="fab fa-cc-visa" aria-label="Visa"></i>
-                        <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
                         <i class="fab fa-cc-amex" aria-label="American Express"></i>
                         <i class="fab fa-paypal" aria-label="PayPal"></i>
                         <i class="fab fa-apple-pay" aria-label="Apple Pay"></i>
