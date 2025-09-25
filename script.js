@@ -177,24 +177,27 @@ class TopSpinUSA {
         // Search functionality
         const searchInput = document.getElementById('searchInput');
         const searchForm = document.querySelector('.search-form');
-        
-        searchInput.addEventListener('input', (e) => {
-            this.searchQuery = e.target.value;
-            this.performSearch();
-        });
-        
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.performSearch();
-        });
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                this.searchQuery = e.target.value;
+                this.performSearch();
+            });
+        }
+        if (searchForm) {
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.performSearch();
+            });
+        }
 
         // Category dropdown
         const categoryBtn = document.getElementById('allCategoriesBtn');
         const categoryMenu = document.getElementById('categoryMenu');
-        
-        categoryBtn.addEventListener('click', () => {
-            categoryMenu.classList.toggle('show');
-        });
+        if (categoryBtn && categoryMenu) {
+            categoryBtn.addEventListener('click', () => {
+                categoryMenu.classList.toggle('show');
+            });
+        }
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
@@ -207,32 +210,35 @@ class TopSpinUSA {
         document.querySelectorAll('.category-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const category = e.target.dataset.category;
+                const category = e.currentTarget.dataset.category;
                 this.filterByCategory(category);
-                categoryMenu.classList.remove('show');
+                if (categoryMenu) categoryMenu.classList.remove('show');
             });
         });
 
         // Brand filter
         const brandFilter = document.getElementById('brandFilter');
-        brandFilter.addEventListener('change', (e) => {
-            this.filterByBrand(e.target.value);
-        });
+        if (brandFilter) {
+            brandFilter.addEventListener('change', (e) => {
+                this.filterByBrand(e.target.value);
+            });
+        }
 
         // Price range filter
         const priceRange = document.getElementById('priceRange');
         const minPrice = document.getElementById('minPrice');
         const maxPrice = document.getElementById('maxPrice');
-        
-        priceRange.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            maxPrice.textContent = `$${value}`;
-            this.currentFilters.priceRange[1] = value;
-            // sync numeric max input if present
-            const maxPriceInputEl = document.getElementById('maxPriceInput');
-            if (maxPriceInputEl) maxPriceInputEl.value = value;
-            this.applyFilters();
-        });
+        if (priceRange) {
+            priceRange.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                if (maxPrice) maxPrice.textContent = `$${value}`;
+                this.currentFilters.priceRange[1] = value;
+                // sync numeric max input if present
+                const maxPriceInputEl = document.getElementById('maxPriceInput');
+                if (maxPriceInputEl) maxPriceInputEl.value = value;
+                this.applyFilters();
+            });
+        }
 
         // Filter checkboxes
         document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
@@ -247,14 +253,17 @@ class TopSpinUSA {
 
         if (minPriceInput) {
             minPriceInput.addEventListener('change', (e) => {
-                this.currentFilters.priceRange[0] = parseInt(e.target.value) || 0;
+                const val = parseInt(e.target.value);
+                this.currentFilters.priceRange[0] = Number.isFinite(val) ? val : 0;
                 this.applyFilters();
             });
         }
 
         if (maxPriceInput) {
             maxPriceInput.addEventListener('change', (e) => {
-                this.currentFilters.priceRange[1] = parseInt(e.target.value) || parseInt(document.getElementById('priceRange')?.max || 500);
+                const val = parseInt(e.target.value);
+                const maxVal = Number.isFinite(val) ? val : parseInt(document.getElementById('priceRange')?.max || 500);
+                this.currentFilters.priceRange[1] = maxVal;
                 // keep the range input in sync
                 const range = document.getElementById('priceRange');
                 if (range) range.value = this.currentFilters.priceRange[1];
@@ -266,36 +275,43 @@ class TopSpinUSA {
 
         // Clear filters
         const clearFiltersBtn = document.getElementById('clearFiltersBtn');
-        clearFiltersBtn.addEventListener('click', () => {
-            this.clearFilters();
-        });
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', () => {
+                this.clearFilters();
+            });
+        }
 
         // Sort functionality
         const sortSelect = document.getElementById('sortSelect');
-        sortSelect.addEventListener('change', (e) => {
-            this.sortBy = e.target.value;
-            this.sortProducts();
-        });
+        if (sortSelect) {
+            sortSelect.addEventListener('change', (e) => {
+                this.sortBy = e.target.value;
+                this.sortProducts();
+            });
+        }
 
         // View mode toggle
         const gridView = document.getElementById('gridView');
         const listView = document.getElementById('listView');
-        
-        gridView.addEventListener('click', () => {
-            this.setViewMode('grid');
-        });
-        
-        listView.addEventListener('click', () => {
-            this.setViewMode('list');
-        });
+        if (gridView) {
+            gridView.addEventListener('click', () => {
+                this.setViewMode('grid');
+            });
+        }
+        if (listView) {
+            listView.addEventListener('click', () => {
+                this.setViewMode('list');
+            });
+        }
 
         // User menu
         const userBtn = document.getElementById('userBtn');
         const userDropdown = document.getElementById('userDropdown');
-        
-        userBtn.addEventListener('click', () => {
-            userDropdown.classList.toggle('show');
-        });
+        if (userBtn && userDropdown) {
+            userBtn.addEventListener('click', () => {
+                userDropdown.classList.toggle('show');
+            });
+        }
 
         // Close user dropdown when clicking outside
         document.addEventListener('click', (e) => {
@@ -308,66 +324,42 @@ class TopSpinUSA {
         const signinBtn = document.getElementById('signinBtn');
         const signupBtn = document.getElementById('signupBtn');
         const signoutBtn = document.getElementById('signoutBtn');
-        
-        signinBtn.addEventListener('click', () => {
-            this.showAuthModal('signin');
-        });
-        
-        signupBtn.addEventListener('click', () => {
-            this.showAuthModal('signup');
-        });
-        
-        signoutBtn.addEventListener('click', () => {
-            this.signOut();
-        });
+        if (signinBtn) signinBtn.addEventListener('click', () => this.showAuthModal('signin'));
+        if (signupBtn) signupBtn.addEventListener('click', () => this.showAuthModal('signup'));
+        if (signoutBtn) signoutBtn.addEventListener('click', () => this.signOut());
 
         // Auth modal
         const authModal = document.getElementById('authModal');
         const authModalClose = document.getElementById('authModalClose');
         const signinTab = document.getElementById('signinTab');
         const signupTab = document.getElementById('signupTab');
-        
-        authModalClose.addEventListener('click', () => {
-            this.hideAuthModal();
-        });
-        
-        signinTab.addEventListener('click', () => {
-            this.switchAuthTab('signin');
-        });
-        
-        signupTab.addEventListener('click', () => {
-            this.switchAuthTab('signup');
-        });
+        if (authModalClose) authModalClose.addEventListener('click', () => this.hideAuthModal());
+        if (signinTab) signinTab.addEventListener('click', () => this.switchAuthTab('signin'));
+        if (signupTab) signupTab.addEventListener('click', () => this.switchAuthTab('signup'));
 
         // Close modal when clicking outside
-        authModal.addEventListener('click', (e) => {
-            if (e.target === authModal) {
-                this.hideAuthModal();
-            }
-        });
+        if (authModal) {
+            authModal.addEventListener('click', (e) => {
+                if (e.target === authModal) {
+                    this.hideAuthModal();
+                }
+            });
+        }
 
         // Cart functionality
         const cartBtn = document.getElementById('cartBtn');
         const cartModal = document.getElementById('cartModal');
         const cartModalClose = document.getElementById('cartModalClose');
-        
-        cartBtn.addEventListener('click', () => {
-            this.showCartModal();
-        });
-        
-        cartModalClose.addEventListener('click', () => {
-            this.hideCartModal();
-        });
+        if (cartBtn) cartBtn.addEventListener('click', () => this.showCartModal());
+        if (cartModalClose) cartModalClose.addEventListener('click', () => this.hideCartModal());
 
         // Favorites functionality
         const favoritesBtn = document.getElementById('favoritesBtn');
-        favoritesBtn.addEventListener('click', () => {
-            this.showFavorites();
-        });
+        if (favoritesBtn) favoritesBtn.addEventListener('click', () => this.showFavorites());
 
         // Newsletter form
         const newsletterForm = document.getElementById('newsletterForm');
-        newsletterForm.addEventListener('submit', (e) => {
+        if (newsletterForm) newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleNewsletterSignup();
         });
@@ -375,12 +367,11 @@ class TopSpinUSA {
         // Hero buttons
         const shopNowBtn = document.getElementById('shopNowBtn');
         const learnMoreBtn = document.getElementById('learnMoreBtn');
-        
-        shopNowBtn.addEventListener('click', () => {
-            document.getElementById('products-heading').scrollIntoView({ behavior: 'smooth' });
+        if (shopNowBtn) shopNowBtn.addEventListener('click', () => {
+            const heading = document.getElementById('products-heading');
+            if (heading) heading.scrollIntoView({ behavior: 'smooth' });
         });
-        
-        learnMoreBtn.addEventListener('click', () => {
+        if (learnMoreBtn) learnMoreBtn.addEventListener('click', () => {
             this.showToast('Learn more about our premium tennis equipment!', 'info');
         });
     }
