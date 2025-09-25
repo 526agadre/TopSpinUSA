@@ -23,6 +23,16 @@ class TopSpinUSA {
     }
 
     init() {
+        // If we're on the dedicated products page, increase items per page for a fuller listing
+        try {
+            const path = (typeof window !== 'undefined' && window.location && window.location.pathname) ? window.location.pathname.toLowerCase() : '';
+            if (path.endsWith('/products.html') || path.endsWith('products.html')) {
+                this.productsPerPage = 24; // larger page size on products listing
+            }
+        } catch (e) {
+            // ignore (e.g., non-browser environment)
+        }
+
         this.generateProducts();
         this.setupEventListeners();
         this.renderProducts();
@@ -96,7 +106,37 @@ class TopSpinUSA {
             });
         });
 
+        // Ensure product catalog matches site messaging: keep catalog between 200 and 250 products.
+        // If generation produced more, truncate; if fewer, allow duplicates until we reach a minimum realistic count.
+        const MIN_PRODUCTS = 200;
+        const MAX_PRODUCTS = 250;
+
+        if (this.products.length > MAX_PRODUCTS) {
+            this.products = this.products.slice(0, MAX_PRODUCTS);
+        } else if (this.products.length < MIN_PRODUCTS) {
+            // Duplicate existing products with new ids until reaching MIN_PRODUCTS
+            let nextId = this.products.length ? Math.max(...this.products.map(p => p.id)) + 1 : 1;
+            const originalProducts = [...this.products];
+            let i = 0;
+            while (this.products.length < MIN_PRODUCTS && originalProducts.length > 0) {
+                const src = originalProducts[i % originalProducts.length];
+                const copy = Object.assign({}, src, {
+                    id: nextId++,
+                    name: `${src.name} (Restock)`,
+                    inStock: true
+                });
+                this.products.push(copy);
+                i++;
+            }
+        }
+
         this.filteredProducts = [...this.products];
+
+        // Update filter counts in the UI to reflect the generated product catalog
+        if (typeof document !== 'undefined') {
+            // Delay to ensure DOM elements are present when init runs
+            setTimeout(() => this.updateFilterCounts(), 0);
+        }
     }
 
     getBasePrice(category, brand) {
@@ -423,6 +463,32 @@ class TopSpinUSA {
         this.filteredProducts = filtered;
         this.sortProducts();
         this.renderProducts();
+    }
+
+    // Update the counts next to each filter option based on the generated catalog
+    updateFilterCounts() {
+        try {
+            // Category counts
+            const categoryCheckboxes = document.querySelectorAll('.filter-checkbox[value]');
+            categoryCheckboxes.forEach(cb => {
+                const value = cb.value;
+                const countEl = cb.parentElement.querySelector('.filter-count');
+                const count = this.products.filter(p => p.category === value).length;
+                if (countEl) countEl.textContent = `(${count})`;
+            });
+
+            // Brand counts
+            const brandOptions = document.querySelectorAll('.filter-option input[type="checkbox"][value]');
+            brandOptions.forEach(input => {
+                const value = input.value;
+                const countEl = input.parentElement.querySelector('.filter-count');
+                const count = this.products.filter(p => p.brand === value).length;
+                if (countEl) countEl.textContent = `(${count})`;
+            });
+        } catch (e) {
+            // fail silently in non-browser or if elements are missing
+            // console.warn('updateFilterCounts failed', e);
+        }
     }
 
     sortProducts() {

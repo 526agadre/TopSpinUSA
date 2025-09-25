@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <!doctype html>
++
++<html lang="en">
++
++  <head>
++
++    <meta charset="utf-8">
++
++    <meta name="viewport" content="width=device-width,initial-scale=1">
++
++    <title>Contact Us — TopSpinUSA</title>
++
++    <meta name="description" content="Contact TopSpinUSA for orders, returns, press and wholesale inquiries. Fast response and helpful customer support.">
++
++    <link rel="stylesheet" href="styles.css">
++
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++
++    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
++
++    <script type="application/ld+json">
++    {"@context":"https://schema.org","@type":"ContactPage","mainEntity":{"@type":"Organization","name":"TopSpinUSA","url":"https://example.com","contactPoint":[{"@type":"ContactPoint","telephone":"+1-800-555-1234","contactType":"customer service","areaServed":"US","availableLanguage":["English"]}]}}
++    </script>
++
++    <style>
++
++      /* Small page-specific helpers to visually separate sections for demo */
++
++      .contact-hero{display:flex;gap:1rem;align-items:center;padding:2rem 0}
++
++      .contact-hero svg{width:96px;height:96px}
++
++      .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem}
++
++      @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
++
++      .lead{color:#334}
++
++    </style>
++
++  </head>
++
++  <body>
++
++    <header class="main-header" role="banner">
++
++      <nav class="navbar" aria-label="Main navigation">
++
++        <div class="nav-container">
++
++          <a class="logo-link" href="index.html" aria-label="TopSpinUSA home">TopSpinUSA</a>
++
++          <div class="nav-actions" aria-hidden="true"> 
++
++            <!-- cart & profile icons could go here -->
++
++          </div>
++
++        </div>
++
++      </nav>
++
++    </header>
++
++
++    <main class="container main-content" role="main">
++
++      <section class="content-section contact-hero" aria-labelledby="contact-hero-title">
++
++        <svg viewBox="0 0 100 100" role="img" aria-hidden="true"><defs><linearGradient id="g1"><stop offset="0" stop-color="#19a1ff"/><stop offset="1" stop-color="#0066cc"/></linearGradient></defs><circle cx="50" cy="50" r="48" fill="url(#g1)"/><g fill="#fff" transform="translate(18,22)"><path d="M14 6c-5 0-9 4-9 9v20h4V15a6 6 0 0 1 6-6h40v-4H14z"/></g></svg>
++
++        <div>
++
++          <h1 id="contact-hero-title">Contact TopSpinUSA</h1>
++
++          <p class="lead">Questions about orders, returns, or products? We typically reply within one business day. Use the form or reach out directly using the contacts below.</p>
++
++        </div>
++
++      </section>
++
++
++      <section class="content-section contact-grid">
++
++        <article aria-labelledby="support-heading">
++
++          <h2 id="support-heading">Customer Support</h2>
++
++          <p>Our support team can help with order tracking, product fit, and returns.</p>
++
++
++          <dl>
++
++            <dt>Email</dt>
++
++            <dd><a href="mailto:support@topspinusa.com">support@topspinusa.com</a></dd>
++
++            <dt>Phone</dt>
++
++            <dd><a href="tel:+18005551234">(800) 555-1234</a> (Mon–Fri, 9am–6pm ET)</dd>
++
++            <dt>Business Address</dt>
++
++            <dd>TopSpinUSA HQ, 123 Court St, Citytown, NY</dd>
++
++          </dl>
++
++
++          <h3>Popular Topics</h3>
++
++          <ul>
++
++            <li><a href="shipping.html">Shipping & delivery</a></li>
++
++            <li><a href="returns.html">Returns & exchanges</a></li>
++
++            <li><a href="size-guide.html">Sizing & fit</a></li>
++
++            <li><a href="faq.html">Frequently asked questions</a></li>
++
++          </ul>
++
++
++          <h3>Press & Partnerships</h3>
++
++          <p>Media and wholesale requests: <a href="mailto:press@topspinusa.com">press@topspinusa.com</a></p>
++
++
++          <hr>
++
++          <h3>Support Hours</h3>
++
++          <table class="hours" summary="Customer support hours">
++
++            <caption class="sr-only">Support hours</caption>
++
++            <thead><tr><th>Day</th><th>Hours</th></tr></thead>
++
++            <tbody>
++
++              <tr><td>Mon–Fri</td><td>9:00 AM — 6:00 PM ET</td></tr>
++
++              <tr><td>Sat</td><td>10:00 AM — 2:00 PM ET</td></tr>
++
++              <tr><td>Sun</td><td>Closed</td></tr>
++
++            </tbody>
++
++          </table>
++
++
++        </article>
++
++
++        <aside aria-labelledby="form-heading">
++
++          <h2 id="form-heading">Send us a message</h2>
++
++          <form id="contactForm" class="contact-form" aria-describedby="contact-help">
++
++            <p id="contact-help" class="sr-only">All fields are required unless marked optional.</p>
++
++            <label for="name">Full name</label>
++
++            <input id="name" name="name" required placeholder="Jane Smith">
++
++
++            <label for="email">Email address</label>
++
++            <input id="email" name="email" type="email" required placeholder="you@example.com">
++
++
++            <label for="order">Order # (optional)</label>
++
++            <input id="order" name="order" placeholder="#123456">
++
++
++            <label for="message">Message</label>
++
++            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your issue..."></textarea>
++
++
++            <div class="form-actions">
++
++              <button type="submit" class="primary">Send message</button>
++
++              <button type="reset" class="secondary">Reset</button>
++
++            </div>
++
++          </form>
++
++
++          <div class="contact-helpers">
++
++            <details>
++
++              <summary>What happens after I submit?</summary>
++
++              <p>We’ll send a confirmation email. If you included an order number we’ll prioritize your request.</p>
++
++            </details>
++
++
++            <details>
++
++              <summary>Privacy note</summary>
++
++              <p>We only use the information you provide to respond to your inquiry. See our <a href="privacy.html">privacy policy</a> for details.</p>
++
++            </details>
++
++          </div>
++
++        </aside>
++
++      </section>
++
++
++    </main>
++
++
++    <!-- Standard Footer -->
++
++    <footer class="main-footer" role="contentinfo">
++
++      <div class="container">
++
++        <div class="footer-content">
++
++          <div class="footer-section">
++
++            <h3 class="footer-title">TopSpinUSA</h3>
++
++            <p class="footer-description">Your premier destination for tennis equipment and apparel from the world's leading brands.</p>
++
++            <div class="social-links">
++
++              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
++
++              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
++
++              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
++
++              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
++
++            </div>
++
++          </div>
++
++          <div class="footer-section">
++
++            <h4 class="footer-subtitle">Shop</h4>
++
++            <ul class="footer-links" role="list">
++
++              <li><a href="products.html?category=rackets" class="footer-link">Tennis Rackets</a></li>
++
++              <li><a href="products.html?category=shoes" class="footer-link">Tennis Shoes</a></li>
++
++              <li><a href="products.html?category=apparel" class="footer-link">Tennis Apparel</a></li>
++
++              <li><a href="products.html?category=balls" class="footer-link">Tennis Balls</a></li>
++
++              <li><a href="products.html?category=bags" class="footer-link">Bags</a></li>
++
++              <li><a href="sale.html" class="footer-link">Sale</a></li>
++
++            </ul>
++
++          </div>
++
++          <div class="footer-section">
++
++            <h4 class="footer-subtitle">Customer Service</h4>
++
++            <ul class="footer-links" role="list">
++
++              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
++
++              <li><a href="shipping.html" class="footer-link">Shipping Info</a></li>
++
++              <li><a href="returns.html" class="footer-link">Returns & Exchanges</a></li>
++
++              <li><a href="size-guide.html" class="footer-link">Size Guide</a></li>
++
++              <li><a href="faq.html" class="footer-link">FAQ</a></li>
++
++            </ul>
++
++          </div>
++
++          <div class="footer-section">
++
++            <h4 class="footer-subtitle">Company</h4>
++
++            <ul class="footer-links" role="list">
++
++              <li><a href="about.html" class="footer-link">About Us</a></li>
++
++              <li><a href="careers.html" class="footer-link">Careers</a></li>
++
++              <li><a href="press.html" class="footer-link">Press</a></li>
++
++              <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
++
++              <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
++
++            </ul>
++
++          </div>
++
++        </div>
++
++        <div class="footer-bottom">
++
++          <div class="footer-bottom-content">
++
++            <div class="payment-methods">
++
++              <i class="fab fa-cc-visa" aria-label="Visa"></i>
++
++              <i class="fab fa-cc-amex" aria-label="American Express"></i>
++
++              <i class="fab fa-paypal" aria-label="PayPal"></i>
++
++              <i class="fab fa-apple-pay" aria-label="Apple Pay"></i>
++
++            </div>
++
++          </div>
++
++        </div>
++
++      </div>
++
++    </footer>
++
++
++    <script>
++
++      // Simple client-side demo handler: prevent default and show a toast.
++
++      document.addEventListener('DOMContentLoaded', function(){
++
++        var form = document.getElementById('contactForm');
++
++        if (form) {
++
++          form.addEventListener('submit', function (e) {
++
++            e.preventDefault();
++
++            var name = (form.name && form.name.value) ? form.name.value : 'Customer';
++
++            alert('Thanks, ' + name + '! Your message was received.');
++
++            form.reset();
++
++          });
++
++        }
++
++      });
++
++    </script>
++
++    <script src="script.js"></script>
++
++  </body>
++
++</html>
++
++        <aside aria-labelledby="form-heading">
++          <h2 id="form-heading">Send us a message</h2>
++          <form id="contactForm" class="contact-form" aria-describedby="contact-help">
++            <p id="contact-help" class="sr-only">All fields are required unless marked optional.</p>
++            <label for="name">Full name</label>
++            <input id="name" name="name" required placeholder="Jane Smith">
++
++            <label for="email">Email address</label>
++            <input id="email" name="email" type="email" required placeholder="you@example.com">
++
++            <label for="order">Order # (optional)</label>
++            <input id="order" name="order" placeholder="#123456">
++
++            <label for="message">Message</label>
++            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your issue..."></textarea>
++
++            <div class="form-actions">
++              <button type="submit" class="primary">Send message</button>
++              <button type="reset" class="secondary">Reset</button>
++            </div>
++          </form>
++
++          <div class="contact-helpers">
++            <details>
++              <summary>What happens after I submit?</summary>
++              <p>We’ll send a confirmation email. If you included an order number we’ll prioritize your request.</p>
++            </details>
++
++            <details>
++              <summary>Privacy note</summary>
++              <p>We only use the information you provide to respond to your inquiry. See our <a href="privacy.html">privacy policy</a> for details.</p>
++            </details>
++          </div>
++        </aside>
++      </section>
++
++      <section class="content-section map-section" aria-hidden="false">
++        <h2>Visit us</h2>
++        <figure>
++          <figcaption>TopSpinUSA headquarters</figcaption>
++          <!-- Decorative SVG map placeholder -->
++          <svg viewBox="0 0 600 200" role="img" aria-label="Map placeholder" style="width:100%;height:200px;background:#eef"><rect width="100%" height="100%" fill="#f6f9fc"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#99a" font-size="18">Map placeholder</text></svg>
++        </figure>
++      </section>
++    </main>
++
++
++    <!-- Standard Footer -->
++    <footer class="main-footer" role="contentinfo">
++      <div class="container">
++        <div class="footer-content">
++          <div class="footer-section">
++            <h3 class="footer-title">TopSpinUSA</h3>
++            <p class="footer-description">Your premier destination for tennis equipment and apparel from the world's leading brands.</p>
++            <div class="social-links">
++              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
++              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
++              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
++              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
++            </div>
++          </div>
++          <div class="footer-section">
++            <h4 class="footer-subtitle">Shop</h4>
++            <ul class="footer-links" role="list">
++              <li><a href="products.html?category=rackets" class="footer-link">Tennis Rackets</a></li>
++              <li><a href="products.html?category=shoes" class="footer-link">Tennis Shoes</a></li>
++              <li><a href="products.html?category=apparel" class="footer-link">Tennis Apparel</a></li>
++              <li><a href="products.html?category=balls" class="footer-link">Tennis Balls</a></li>
++              <li><a href="products.html?category=bags" class="footer-link">Bags</a></li>
++              <li><a href="sale.html" class="footer-link">Sale</a></li>
++            </ul>
++          </div>
++          <div class="footer-section">
++            <h4 class="footer-subtitle">Customer Service</h4>
++            <ul class="footer-links" role="list">
++              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
++              <li><a href="shipping.html" class="footer-link">Shipping Info</a></li>
++              <li><a href="returns.html" class="footer-link">Returns & Exchanges</a></li>
++              <li><a href="size-guide.html" class="footer-link">Size Guide</a></li>
++              <li><a href="faq.html" class="footer-link">FAQ</a></li>
++            </ul>
++          </div>
++          <div class="footer-section">
++            <h4 class="footer-subtitle">Company</h4>
++            <ul class="footer-links" role="list">
++              <li><a href="about.html" class="footer-link">About Us</a></li>
++              <li><a href="careers.html" class="footer-link">Careers</a></li>
++              <li><a href="press.html" class="footer-link">Press</a></li>
++              <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
++              <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
++            </ul>
++          </div>
++        </div>
++        <div class="footer-bottom">
++          <div class="footer-bottom-content">
++            <div class="payment-methods">
++              <i class="fab fa-cc-visa" aria-label="Visa"></i>
++              <i class="fab fa-cc-amex" aria-label="American Express"></i>
++              <i class="fab fa-paypal" aria-label="PayPal"></i>
++              <i class="fab fa-apple-pay" aria-label="Apple Pay"></i>
++            </div>
++          </div>
++        </div>
++      </div>
++    </footer>
++
++    <script>
++      // Simple client-side demo handler: prevent default and show a toast.
++      document.addEventListener('DOMContentLoaded', function(){
++        var form = document.getElementById('contactForm');
++        if(form){
++          form.addEventListener('submit', function(e){
++            e.preventDefault();
++            var name = form.name.value || 'Customer';
++            alert('Thanks, ' + name + '! Your message was received.');
++            form.reset();
++          });
++        }
++      });
++    </script>
++    <script src="script.js"></script>
++  </body>
++</html>
