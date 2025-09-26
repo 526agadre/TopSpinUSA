@@ -398,6 +398,15 @@
     
     .tile-content {
         padding: var(--spacing-4);
+        }
+
+/* Additional tweaks for TopSpinUSA */
+@media (max-width: 720px) {
+    .nav-container { height: auto; padding: 12px 0; }
+    .search-section { order: 3; width: 100%; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .hero-title { font-size: 28px; }
+}
     }
     
     .tile-title {

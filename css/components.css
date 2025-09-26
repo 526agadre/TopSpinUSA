@@ -398,6 +398,43 @@
     gap: var(--spacing-2);
     background: var(--white);
     border: 1px solid var(--gray-300);
+
+/* -- TopSpinUSA ecommerce additions -- */
+
+.nav-actions .icon-btn { background: transparent; border: none; padding: 8px; border-radius: 10px; }
+.nav-actions .icon-btn:hover { background: rgba(15,23,36,0.04); }
+
+.cart-count, .favorites-count { position: absolute; top: -6px; right: -6px; background: var(--accent-color, var(--secondary-color)); color: #111; font-size: 11px; padding: 2px 6px; border-radius: 999px; }
+
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.product-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-md); display:flex; flex-direction:column; }
+.product-media { height: 180px; background-size: cover; background-position: center; }
+.product-body { padding: 12px 14px; flex:1; display:flex; flex-direction:column; }
+.product-title { font-weight:600; margin:0 0 6px 0; font-size:15px; color:var(--gray-900); }
+.product-meta { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px }
+
+.campaign-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; align-items:stretch; }
+.campaign-tile { display:block; position:relative; overflow:hidden; border-radius:12px; min-height:200px; color:#fff; text-decoration:none; }
+.tile-media { position:absolute; inset:0; background-size:cover; background-position:center; transform:scale(1.02); }
+.tile-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(8,13,10,0.15), rgba(2,6,3,0.6)); }
+.tile-content { position:relative; z-index:2; padding:18px; display:flex; flex-direction:column; justify-content:flex-end; height:100%; }
+.tile-title { font-size:20px; margin:0 0 8px 0; }
+.tile-cta { font-weight:700; background:rgba(255,255,255,0.1); padding:8px 12px; border-radius:8px; align-self:flex-start; }
+
+/* compact price inputs */
+.price-range-group { display:flex; gap:8px; align-items:center; }
+.price-range-group input[type="number"] { width:84px; padding:8px 10px; border-radius:8px; border:1px solid rgba(15,23,36,0.06); }
+
+/* smaller hero stat */
+.hero-stats { display:flex; gap: 18px; margin-top:20px; }
+.hero-stats .stat-number { font-weight:700; }
+
+/* responsiveish fallback */
+@media (max-width: 980px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .campaign-grid { grid-template-columns: 1fr; }
+}
+
     padding: var(--spacing-3) var(--spacing-4);
     border-radius: var(--radius-md);
     cursor: pointer;

@@ -5,11 +5,37 @@
     --primary-color: #1a365d;
     --primary-light: #2d5a87;
     --primary-dark: #0f2438;
-    --secondary-color: #e53e3e;
-    --accent-color: #38a169;
-    --warning-color: #ed8936;
-    --error-color: #e53e3e;
-    --success-color: #38a169;
+    /* Brand colors */
+    --brand-1: #0b6e4f; /* deep tennis green */
+    --brand-2: #ffb300; /* warm accent */
+    --brand-3: #0f1724; /* dark slate for text */
+
+    /* Neutral scale */
+    --bg: #ffffff;
+    --surface: #f7faf9;
+    --muted: #6b7280;
+    --muted-2: #9aa3ad;
+
+    /* Interactive */
+    --primary: var(--brand-1);
+    --accent: var(--brand-2);
+
+    /* Typography */
+    --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --text: var(--brand-3);
+    --heading-weight: 700;
+    --body-weight: 400;
+
+    /* Layout tokens */
+    --radius-sm: 6px;
+    --radius: 12px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 4px 10px rgba(12, 25, 20, 0.06);
+    --shadow-md: 0 10px 30px rgba(12, 25, 20, 0.08);
+
+    /* Sizes */
+    --container-max: 1200px;
+    --nav-height: 72px;
     
     /* Neutral Colors */
     --white: #ffffff;
