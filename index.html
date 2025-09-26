@@ -20,13 +20,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header class="main-header" role="banner">
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo-section">
                     <a href="#home" class="logo-link" aria-label="TopSpinUSA Home">
-                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='60'></text></svg>" alt="TopSpinUSA Logo" class="logo-img">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎾</text></svg>" alt="TopSpinUSA Logo" class="logo-img">
                         <span class="logo-text">TopSpinUSA</span>
                     </a>
                 </div>
@@ -35,7 +34,6 @@
                         <i class="fas fa-heart" aria-hidden="true"></i>
                         <span class="favorites-count" id="favoritesCount">0</span>
                     </button>
-                    
                     <button class="cart-btn" id="cartBtn" aria-label="View shopping cart">
                         <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                         <span class="cart-count" id="cartCount">0</span>
@@ -63,7 +61,6 @@
             </div>
         </nav>
 
-        <!-- Category Navigation -->
         <nav class="category-nav" role="navigation" aria-label="Product categories">
             <div class="category-container">
                 <div class="category-dropdown">
@@ -126,42 +123,29 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section full-bleed" id="home" role="banner">
         <div class="hero-bg" aria-hidden="true">
-            <!-- Background video (kept as fallback) -->
             <video class="hero-video" autoplay muted loop playsinline>
                 <source src="https://cdn.coverr.co/videos/coverr-tennis-court-1137/1080p.mp4" type="video/mp4">
             </video>
-            <!-- Tennis background GIF (lazy) -->
             <img class="hero-gif-bg" src="imgs/novak1.gif" alt="Tennis background" loading="lazy">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-announcement">
+                    New Racket Launch: Free Express Shipping on All Pre-Orders!
                 </div>
                 <h1 class="hero-title">Elevate Your Tennis Game</h1>
-                <p class="hero-subtitle">Discover premium tennis equipment and apparel from the world's leading brands</p>
+                <p class="hero-subtitle">Discover premium tennis equipment and apparel from the world's leading brands. **Unleash your potential** on any court surface.</p>
                 <div class="hero-actions">
-                    <button class="cta-btn primary" id="shopNowBtn">Shop Now</button>
-                    <button class="cta-btn secondary" id="learnMoreBtn">Learn More</button>
+                    <button class="cta-btn primary" id="shopNowBtn">Shop The Latest Gear</button>
+                    <button class="cta-btn secondary" id="learnMoreBtn">Explore Tech</button>
                 </div>
-                <div class="hero-stats" aria-label="TopSpinUSA highlights">
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">200-250</div>
-                        <div class="stat-label">Products in-stock</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
                 </div>
-            </div>
+        </div>
     </section>
 
-    <!-- Campaign Section -->
     <section class="campaign-section" role="region" aria-label="Campaign highlights">
         <div class="container">
             <div class="campaign-grid">
@@ -170,8 +154,8 @@
                     <div class="tile-overlay"></div>
                     <div class="tile-content">
                         <h3 class="tile-title">Speed Meets Control</h3>
-                        <p class="tile-subtitle">Performance shoes for hard courts</p>
-                        <span class="tile-cta">Shop Now</span>
+                        <p class="tile-subtitle">Performance shoes built for **aggressive movers** on hard courts.</p>
+                        <span class="tile-cta">Shop Footwear</span>
                     </div>
                 </a>
                 <a class="campaign-tile" href="products.html?category=rackets" aria-label="Shop rackets">
@@ -179,7 +163,8 @@
                     <div class="tile-overlay"></div>
                     <div class="tile-content">
                         <h3 class="tile-title">Pro Rackets</h3>
-                        <span class="tile-cta">Explore</span>
+                        <p class="tile-subtitle">Find the **perfect blend of power and feel**.</p>
+                        <span class="tile-cta">Explore Rackets</span>
                     </div>
                 </a>
                 <a class="campaign-tile" href="products.html?category=apparel" aria-label="Shop apparel">
@@ -187,19 +172,19 @@
                     <div class="tile-overlay"></div>
                     <div class="tile-content">
                         <h3 class="tile-title">Court Apparel</h3>
-                        <span class="tile-cta">Discover</span>
+                        <p class="tile-subtitle">Engineered for **peak performance** and style.</p>
+                        <span class="tile-cta">Discover Apparel</span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- New Arrivals Carousel -->
     <section class="new-arrivals-section" role="region" aria-labelledby="new-arrivals-heading">
         <div class="container">
             <header class="section-header row">
                 <h2 id="new-arrivals-heading" class="section-title">New Arrivals</h2>
-                <a href="products.html?sort=newest" class="section-link">View All</a>
+                <a href="products.html?sort=newest" class="section-link">View All <i class="fas fa-chevron-right"></i></a>
             </header>
             <div class="carousel" aria-label="New arrivals carousel">
                 <div class="carousel-track">
@@ -207,32 +192,40 @@
                         <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600&auto=format&fit=crop" alt="Adidas Barricade"></div>
                         <div class="product-info">
                             <div class="product-brand">Adidas</div>
-                            <h3 class="product-name">Barricade</h3>
-                            <div class="product-price"><span class="current-price">$149</span></div>
+                            <h3 class="product-name">Barricade 2025</h3>
+                            <div class="product-price"><span class="current-price">$149.95</span></div>
                         </div>
                     </article>
                     <article class="product-card">
                         <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?q=80&w=600&auto=format&fit=crop" alt="Yonex Ezone 98"></div>
                         <div class="product-info">
                             <div class="product-brand">Yonex</div>
-                            <h3 class="product-name">Ezone 98</h3>
-                            <div class="product-price"><span class="current-price">$259</span></div>
+                            <h3 class="product-name">Ezone 98 Tour</h3>
+                            <div class="product-price"><span class="current-price">$269.00</span></div>
                         </div>
                     </article>
                     <article class="product-card">
                         <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1581012778430-3f22b4f5baf4?q=80&w=600&auto=format&fit=crop" alt="NikeCourt Advantage Tee"></div>
                         <div class="product-info">
                             <div class="product-brand">Nike</div>
-                            <h3 class="product-name">Court Advantage Tee</h3>
-                            <div class="product-price"><span class="current-price">$45</span></div>
+                            <h3 class="product-name">Dri-FIT Advantage Tee</h3>
+                            <div class="product-price"><span class="current-price">$55.00</span></div>
                         </div>
                     </article>
                     <article class="product-card">
                         <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=600&auto=format&fit=crop" alt="Babolat RPM Blast"></div>
                         <div class="product-info">
                             <div class="product-brand">Babolat</div>
-                            <h3 class="product-name">RPM Blast 17</h3>
-                            <div class="product-price"><span class="current-price">$18</span></div>
+                            <h3 class="product-name">RPM Blast String Set</h3>
+                            <div class="product-price"><span class="current-price">$19.99</span></div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container"><img class="product-image" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=600&auto=format&fit=crop" alt="Head Performance Shorts"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Head</div>
+                            <h3 class="product-name">Performance Shorts</h3>
+                            <div class="product-price"><span class="current-price">$65</span></div>
                         </div>
                     </article>
                 </div>
@@ -240,7 +233,6 @@
         </div>
     </section>
 
-    <!-- Brand Marquee -->
     <section class="brand-marquee" aria-label="Brand partners">
         <div class="marquee-track">
             <span class="brand">NIKE</span>
@@ -262,20 +254,17 @@
         </div>
     </section>
 
-    <!-- Featured Products Section -->
     <section class="featured-section" role="region" aria-labelledby="featured-heading">
         <div class="container">
             <header class="section-header">
-                <h2 id="featured-heading" class="section-title">Featured Products</h2>
-                <p class="section-subtitle">Handpicked favorites from our collection</p>
+                <h2 id="featured-heading" class="section-title">Essential Court Gear</h2>
+                <p class="section-subtitle">Our top-selling and handpicked favorites for immediate performance gains.</p>
             </header>
             <div class="products-grid" id="featuredProducts" role="grid" aria-label="Featured products">
-                <!-- Products will be dynamically loaded here -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Main Products Section -->
     <main class="main-content" role="main">
         <div class="container">
             <section class="products-section" role="region" aria-labelledby="products-heading">
@@ -418,35 +407,14 @@
                     
                     <div class="products-main">
                         <div class="products-grid" id="productsGrid" role="grid" aria-label="Product listings">
-                            <!-- Products will be dynamically loaded here -->
-                        </div>
+                            </div>
                         <div class="pagination" id="pagination" role="navigation" aria-label="Product pagination">
-                            <!-- Pagination will be dynamically generated -->
-                        </div>
+                            </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" role="region" aria-labelledby="newsletter-heading">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2 id="newsletter-heading" class="newsletter-title">Stay Updated</h2>
-                <p class="newsletter-subtitle">Get the latest tennis gear updates and exclusive offers</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <div class="newsletter-input-group">
-                        <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
-                        <button type="submit" class="newsletter-btn">Subscribe</button>
-                    </div>
-                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="main-footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
@@ -508,17 +476,18 @@
                 <div class="footer-bottom-content">
                     <div class="payment-methods">
                         <i class="fab fa-cc-visa" aria-label="Visa"></i>
+                        <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
                         <i class="fab fa-cc-amex" aria-label="American Express"></i>
-                        <i class="fab fa-paypal" aria-label="PayPal"></i>
-                        <i class="fab fa-apple-pay" aria-label="Apple Pay"></i>
+                        
+                        <i class="fab fa-paypal" aria-label="PayPal Accepted"></i>
+                        <i class="fa-brands fa-stripe" aria-label="Payments powered by Stripe"></i>
                     </div>
+                    <p class="copyright-text">&copy; 2025 TopSpinUSA. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Modals -->
-    <!-- Authentication Modal -->
     <div class="modal" id="authModal" role="dialog" aria-labelledby="authModalTitle" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
@@ -580,10 +549,6 @@
                                 <label for="signupPassword" class="form-label">Password</label>
                                 <input type="password" id="signupPassword" class="form-input" required>
                             </div>
-                            <div class="form-group">
-                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" id="signupConfirmPassword" class="form-input" required>
-                            </div>
                             <button type="submit" class="auth-submit-btn">Sign Up</button>
                         </form>
                     </div>
@@ -591,74 +556,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Product Modal -->
-    <div class="modal" id="productModal" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
-        <div class="modal-content product-modal-content">
-            <div class="modal-header">
-                <h2 id="productModalTitle" class="modal-title">Product Details</h2>
-                <button class="modal-close" id="productModalClose" aria-label="Close modal">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="product-details" id="productDetails">
-                    <!-- Product details will be dynamically loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="modal" id="cartModal" role="dialog" aria-labelledby="cartModalTitle" aria-hidden="true">
-        <div class="modal-content cart-modal-content">
-            <div class="modal-header">
-                <h2 id="cartModalTitle" class="modal-title">Shopping Cart</h2>
-                <button class="modal-close" id="cartModalClose" aria-label="Close modal">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="cart-content" id="cartContent">
-                    <!-- Cart items will be dynamically loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Payment Modal -->
-    <div class="modal" id="paymentModal" role="dialog" aria-labelledby="paymentModalTitle" aria-hidden="true">
-        <div class="modal-content payment-modal-content">
-            <div class="modal-header">
-                <h2 id="paymentModalTitle" class="modal-title">Secure Checkout</h2>
-                <button class="modal-close" id="paymentModalClose" aria-label="Close modal">
-                    <i class="fas fa-times" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="payment-content" id="paymentContent">
-                    <!-- Payment form will be dynamically loaded here -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
-        <div class="loading-spinner">
-            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
-            <p class="loading-text">Loading...</p>
-        </div>
-    </div>
-
-    <!-- Toast Notifications -->
-    <div class="toast-container" id="toastContainer" role="alert" aria-live="polite">
-        <!-- Toast notifications will be dynamically added here -->
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://js.stripe.com/v3/"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
